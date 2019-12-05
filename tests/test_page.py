@@ -56,7 +56,7 @@ class TestSearchResults:
         search_page = AutomationSearchPage(browser)
         main_page.load()
         main_page.search(phrase)
-        assert search_page.find_last_element_of_search_result(7) == 1
+        assert search_page.find_last_element_of_search_result(7)
 
     def test_search_with_matches_header(self, browser):
         phrase = "dress"
