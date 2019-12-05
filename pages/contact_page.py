@@ -3,11 +3,13 @@ from selenium.webdriver.common.keys import Keys
 
 
 class AutomationContactPage:
+    """
+    Class with selectors and methods for Contact Page
+    """
     URL = "http://automationpractice.com/index.php?controller=contact"
     SEND_BUTTON = (By.XPATH, "//span[contains(text(),'Send')]")
     EMAIL_ADDRESS_INPUT = (By.ID, "email")
     ERROR_MESSAGE_ELEMENT = (By.XPATH, "//div[@class='alert alert-danger']")
-
 
     def __init__(self, browser):
         self.browser = browser

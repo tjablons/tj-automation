@@ -3,6 +3,9 @@ from selenium.webdriver.common.keys import Keys
 
 
 class AutomationMainPage:
+    """
+    Class with selectors and methods for Home page
+    """
     URL = "http://automationpractice.com/index.php"
     SEARCH_INPUT = (By.ID, "search_query_top")
     CONTACT_BUTTON = (By.LINK_TEXT, "Contact us")
