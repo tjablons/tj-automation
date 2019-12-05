@@ -41,8 +41,5 @@ class AutomationSearchPage:
             print("No search element with given ID has been found!")
             return False
 
-
-
-
     def get_search_result_text(self):
         return self.browser.find_element(*self.SEARCH_RESULT_PRODUCT_COUNT).text
