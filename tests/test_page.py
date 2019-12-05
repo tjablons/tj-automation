@@ -45,20 +45,20 @@ class TestSearchResults:
         This test searches for test phrase that expects no matches
         Expected result: 'No Results were found for your search' message
         """
-        phrase = "test1"
+        phrase = "test1test"
         main_page = AutomationMainPage(browser)
         search_page = AutomationSearchPage(browser)
         main_page.load()
         main_page.search(phrase)
         search_result_text = search_page.get_empty_search_result_text()
-        assert search_result_text == 'No results were found for your search "test1"'
+        assert 'No results were found for your search "test1test"' in search_result_text
 
     def test_search_testPhraseWithoutMatches_zeroResultsHeaderShouldBeDisplayed(self, browser):
         """
         This test searches for test phrase that expects no matches
         Expected result: '0 results' displayed in result header
         """
-        phrase = "test1"
+        phrase = "test1test"
         main_page = AutomationMainPage(browser)
         search_page = AutomationSearchPage(browser)
         main_page.load()
@@ -94,7 +94,7 @@ class TestSearchResults:
         search_result_header_element_count = str(search_page.get_search_header_text())[0]
         assert not search_page.find_last_element_of_search_result(str(int(search_result_header_element_count)+1))
 
-    def test_search_with_matches_text(self, browser):
+    def test_search_testPhraseWithMatches_productCountMatchesHeaderInformation(self, browser):
         """
         This test searches for test phrase that expects matches
         Expected result: search result product count information (Showing 1 - X) matches search header information
